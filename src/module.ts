@@ -1,40 +1,19 @@
 import { PanelPlugin } from '@grafana/data';
-import { SimpleOptions } from './types';
-import { SimplePanel } from './components/SimplePanel';
+import { PumpchartOptions } from './types';
+import { PumpchartPanel } from './components/panel';
 
-export const plugin = new PanelPlugin<SimpleOptions>(SimplePanel).setPanelOptions((builder) => {
+export const plugin = new PanelPlugin<PumpchartOptions>(PumpchartPanel).setPanelOptions((builder, context) => {
   return builder
-    .addTextInput({
-      path: 'text',
-      name: 'Simple text option',
-      description: 'Description of panel option',
-      defaultValue: 'Default value of text input option',
-    })
-    .addBooleanSwitch({
-      path: 'showSeriesCount',
-      name: 'Show series counter',
-      defaultValue: false,
-    })
-    .addRadio({
-      path: 'seriesCountSize',
-      defaultValue: 'sm',
-      name: 'Series counter size',
+    .addSliderInput({
+      path: 'test',
+      name: 'Test Number',
+      description: 'Just for testing!',
       settings: {
-        options: [
-          {
-            value: 'sm',
-            label: 'Small',
-          },
-          {
-            value: 'md',
-            label: 'Medium',
-          },
-          {
-            value: 'lg',
-            label: 'Large',
-          },
-        ],
+        min: 0,
+        max: 10,
+        step: 1,
+        included: false,
       },
-      showIf: (config) => config.showSeriesCount,
+      defaultValue: 5,
     });
 });
