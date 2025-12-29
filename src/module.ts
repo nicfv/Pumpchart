@@ -58,7 +58,7 @@ export const plugin = new PanelPlugin<PumpchartOptions>(PumpchartPanel).setPanel
       path: 'specificGravity',
       name: 'Specific Gravity',
       description: 'The ratio of density of the process fluid in the system to the density of pure water.',
-      category: ['System Properties'],
+      category: ['Fluid Properties'],
       defaultValue: defaultPumpchartOptions.specificGravity,
       settings: {
         integer: false,
@@ -72,7 +72,7 @@ export const plugin = new PanelPlugin<PumpchartOptions>(PumpchartPanel).setPanel
       path: 'maxSpeed',
       name: 'Max Speed',
       description: 'The maximum rotational speed of the pump, in the units provided.',
-      category: ['System Properties'],
+      category: ['Pump Properties'],
       defaultValue: defaultPumpchartOptions.maxSpeed,
       settings: {
         integer: true,
@@ -80,6 +80,62 @@ export const plugin = new PanelPlugin<PumpchartOptions>(PumpchartPanel).setPanel
         max: 10000,
         step: 1,
         placeholder: 'Max Speed',
+      },
+    })
+    .addNumberInput({
+      path: 'curve.pump.maxFlow',
+      name: 'Max Flow',
+      description: 'The theoretical maximum pump flow rate, with zero friction or head loss.',
+      category: ['Pump Properties'],
+      defaultValue: defaultPumpchartOptions.curve.pump.maxFlow,
+      settings: {
+        integer: false,
+        min: 1,
+        max: 1e6,
+        step: 0.1,
+        placeholder: 'Max Flow',
+      },
+    })
+    .addNumberInput({
+      path: 'maxHead',
+      name: 'Max Head',
+      description: 'The theoretical maximum pressure the pump can add to the fluid, known as the shut-off head.',
+      category: ['Pump Properties'],
+      defaultValue: defaultPumpchartOptions.curve.pump.maxHead,
+      settings: {
+        integer: false,
+        min: 1,
+        max: 1e6,
+        step: 0.1,
+        placeholder: 'Max Head',
+      },
+    })
+    .addNumberInput({
+      path: 'curve.system.static',
+      name: 'Static',
+      description: 'The static head loss in the system, which is defined by the elevation difference between the inlet and outlet of the system, and is theoretically zero for closed systems.',
+      category: ['System Properties'],
+      defaultValue: defaultPumpchartOptions.curve.system.static,
+      settings: {
+        integer: false,
+        min: 0,
+        max: 1e6,
+        step: 0.1,
+        placeholder: 'Static',
+      },
+    })
+    .addNumberInput({
+      path: 'curve.system.friction',
+      name: 'Friction',
+      description: 'The coefficient of friction in the system, which scales head loss quadratically with flow rate.',
+      category: ['System Properties'],
+      defaultValue: defaultPumpchartOptions.curve.system.friction,
+      settings: {
+        integer: false,
+        min: 0,
+        max: 1e6,
+        step: 0.0001,
+        placeholder: 'Static',
       },
     });
 });
