@@ -137,5 +137,40 @@ export const plugin = new PanelPlugin<PumpchartOptions>(PumpchartPanel).setPanel
         step: 0.0001,
         placeholder: 'Static',
       },
+    })
+    .addSelect({
+      path: 'gradient',
+      name: 'Gradient',
+      description: 'The gradient used for colorizing this data series.',
+      category: ['Display Options'],
+      defaultValue: defaultPumpchartOptions.gradient,
+    })
+    .addRadio({
+      path: 'colorizeBy',
+      name: 'Colorize By',
+      description: 'Preferred parameter used to colorize data points.',
+      category: ['Display Options'],
+      defaultValue: defaultPumpchartOptions.colorizeBy,
+      settings: {
+        allowCustomValue: false,
+        isClearable: false,
+        options: [
+          { label: 'Time', value: 'time' },
+          { label: 'Efficiency', value: 'efficiency', description: 'If possible', },
+        ],
+      },
+    })
+    .addSliderInput({
+      path: 'radius',
+      name: 'Point Radius',
+      description: 'How large to render each data point.',
+      category: ['Display Options'],
+      defaultValue: defaultPumpchartOptions.radius,
+      settings: {
+        included: true,
+        min: 1,
+        max: 10,
+        step: 1,
+      },
     });
 });
