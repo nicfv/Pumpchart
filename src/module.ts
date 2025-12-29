@@ -72,7 +72,7 @@ export const plugin = new PanelPlugin<PumpchartOptions>(PumpchartPanel).setPanel
       path: 'maxSpeed',
       name: 'Max Speed',
       description: 'The maximum rotational speed of the pump, in the units provided.',
-      category: ['Pump Properties'],
+      category: ['Pump Parameters'],
       defaultValue: defaultPumpchartOptions.maxSpeed,
       settings: {
         integer: true,
@@ -86,7 +86,7 @@ export const plugin = new PanelPlugin<PumpchartOptions>(PumpchartPanel).setPanel
       path: 'curve.pump.maxFlow',
       name: 'Max Flow',
       description: 'The theoretical maximum pump flow rate, with zero friction or head loss.',
-      category: ['Pump Properties'],
+      category: ['Pump Parameters'],
       defaultValue: defaultPumpchartOptions.curve.pump.maxFlow,
       settings: {
         integer: false,
@@ -100,7 +100,7 @@ export const plugin = new PanelPlugin<PumpchartOptions>(PumpchartPanel).setPanel
       path: 'maxHead',
       name: 'Max Head',
       description: 'The theoretical maximum pressure the pump can add to the fluid, known as the shut-off head.',
-      category: ['Pump Properties'],
+      category: ['Pump Parameters'],
       defaultValue: defaultPumpchartOptions.curve.pump.maxHead,
       settings: {
         integer: false,
@@ -114,7 +114,7 @@ export const plugin = new PanelPlugin<PumpchartOptions>(PumpchartPanel).setPanel
       path: 'curve.system.static',
       name: 'Static',
       description: 'The static head loss in the system, which is defined by the elevation difference between the inlet and outlet of the system, and is theoretically zero for closed systems.',
-      category: ['System Properties'],
+      category: ['System Parameters'],
       defaultValue: defaultPumpchartOptions.curve.system.static,
       settings: {
         integer: false,
@@ -128,7 +128,7 @@ export const plugin = new PanelPlugin<PumpchartOptions>(PumpchartPanel).setPanel
       path: 'curve.system.friction',
       name: 'Friction',
       description: 'The coefficient of friction in the system, which scales head loss quadratically with flow rate.',
-      category: ['System Properties'],
+      category: ['System Parameters'],
       defaultValue: defaultPumpchartOptions.curve.system.friction,
       settings: {
         integer: false,
