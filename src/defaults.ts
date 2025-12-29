@@ -6,7 +6,7 @@ import { Palette, PaletteName } from 'viridis';
 export const defaultPumpchartOptions: PumpchartOptions = {
     colorizeBy: 'time',
     curve: {
-        pump: { maxFlow: 100, maxHead: 100 },
+        pump: { maxFlow: 200, maxHead: 50 },
         system: { friction: 0.001, static: 10 },
     },
     gradient: 'Viridis',
