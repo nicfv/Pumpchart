@@ -97,7 +97,7 @@ export const plugin = new PanelPlugin<PumpchartOptions>(PumpchartPanel).setPanel
       },
     })
     .addNumberInput({
-      path: 'maxHead',
+      path: 'curve.pump.maxHead',
       name: 'Max Head',
       description: 'The theoretical maximum pressure the pump can add to the fluid, known as the shut-off head.',
       category: ['Pump Parameters'],
