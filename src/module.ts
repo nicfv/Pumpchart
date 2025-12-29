@@ -1,4 +1,4 @@
-import { PanelPlugin, SelectableValue } from '@grafana/data';
+import { FieldNamePickerBaseNameMode, FieldType, PanelPlugin, SelectableValue } from '@grafana/data';
 import { PumpchartOptions } from './types';
 import { PumpchartPanel } from './components/panel';
 import { defaultPumpchartOptions, Gradients } from 'defaults';
@@ -136,6 +136,62 @@ export const plugin = new PanelPlugin<PumpchartOptions>(PumpchartPanel).setPanel
         max: 1e6,
         step: 0.0001,
         placeholder: 'Static',
+      },
+    })
+    .addFieldNamePicker({
+      path: 'series.flow',
+      name: 'Flow Series',
+      description: 'The name of the time-series measuring volumetric flow rate.',
+      category: ['Data Sources'],
+      defaultValue: defaultPumpchartOptions.series.flow,
+      settings: {
+        baseNameMode: FieldNamePickerBaseNameMode.IncludeAll,
+        filter(field) {
+          return field.type === FieldType.number;
+        },
+        isClearable: true,
+      },
+    })
+    .addFieldNamePicker({
+      path: 'series.head',
+      name: 'Head Series',
+      description: 'The name of the time-series measuring differential head pressure across the pump.',
+      category: ['Data Sources'],
+      defaultValue: defaultPumpchartOptions.series.head,
+      settings: {
+        baseNameMode: FieldNamePickerBaseNameMode.IncludeAll,
+        filter(field) {
+          return field.type === FieldType.number;
+        },
+        isClearable: true,
+      },
+    })
+    .addFieldNamePicker({
+      path: 'series.power',
+      name: 'Power Series',
+      description: 'The name of the time-series measuring input power to the pump.',
+      category: ['Data Sources'],
+      defaultValue: defaultPumpchartOptions.series.power,
+      settings: {
+        baseNameMode: FieldNamePickerBaseNameMode.IncludeAll,
+        filter(field) {
+          return field.type === FieldType.number;
+        },
+        isClearable: true,
+      },
+    })
+    .addFieldNamePicker({
+      path: 'series.speed',
+      name: 'Speed Series',
+      description: 'The name of the time-series measuring rotational pump speed.',
+      category: ['Data Sources'],
+      defaultValue: defaultPumpchartOptions.series.speed,
+      settings: {
+        baseNameMode: FieldNamePickerBaseNameMode.IncludeAll,
+        filter(field) {
+          return field.type === FieldType.number;
+        },
+        isClearable: true,
       },
     })
     .addSelect({
