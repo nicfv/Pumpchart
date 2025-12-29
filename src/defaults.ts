@@ -1,4 +1,7 @@
+import { SelectableValue } from '@grafana/data';
+import { getURL } from 'icon';
 import { PumpchartOptions } from 'types';
+import { Palette, PaletteName } from 'viridis';
 
 export const defaultPumpchartOptions: PumpchartOptions = {
     colorizeBy: 'time',
@@ -12,3 +15,5 @@ export const defaultPumpchartOptions: PumpchartOptions = {
     specificGravity: 1,
     units: { flow: 'gpm', head: 'ft', power: 'hp', speed: 'Hz' },
 };
+
+export const Gradients: Array<SelectableValue<PaletteName>> = Object.keys(Palette).map(name => { return { label: name, value: name, imgUrl: getURL(name as PaletteName, 10, 2) } as SelectableValue<PaletteName> });

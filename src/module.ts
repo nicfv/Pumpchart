@@ -1,7 +1,7 @@
 import { PanelPlugin, SelectableValue } from '@grafana/data';
 import { PumpchartOptions } from './types';
 import { PumpchartPanel } from './components/panel';
-import { defaultPumpchartOptions } from 'defaults';
+import { defaultPumpchartOptions, Gradients } from 'defaults';
 import { Pumpchart } from 'psychart';
 
 export const plugin = new PanelPlugin<PumpchartOptions>(PumpchartPanel).setPanelOptions((builder, context) => {
@@ -144,6 +144,11 @@ export const plugin = new PanelPlugin<PumpchartOptions>(PumpchartPanel).setPanel
       description: 'The gradient used for colorizing this data series.',
       category: ['Display Options'],
       defaultValue: defaultPumpchartOptions.gradient,
+      settings: {
+        allowCustomValue: false,
+        isClearable: false,
+        options: Gradients,
+      },
     })
     .addRadio({
       path: 'colorizeBy',
