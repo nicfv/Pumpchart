@@ -12,6 +12,7 @@ export const defaultPumpchartOptions: PumpchartOptions = {
     gradient: 'Viridis',
     maxSpeed: 60,
     radius: 3,
+    series: { flow: '', head: '', power: '', speed: '' },
     specificGravity: 1,
     units: { flow: 'gpm', head: 'ft', power: 'hp', speed: 'Hz' },
 };
