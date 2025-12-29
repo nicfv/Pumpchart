@@ -10,7 +10,6 @@ export const PumpchartPanel: React.FC<PanelProps<PumpchartOptions>> = (props) =>
   const isDarkTheme: boolean = useTheme2().isDark;
   let innerElement: HTMLElement;
   try {
-    console.log(props.options.curve);
     const pumpchart: Pumpchart = new Pumpchart({
       axisColor: isDarkTheme ? '#303030' : '#E0E0E0',
       colorizeBy: props.options.colorizeBy,
@@ -38,8 +37,8 @@ export const PumpchartPanel: React.FC<PanelProps<PumpchartOptions>> = (props) =>
       systemCurveColor: isDarkTheme ? '#22AA66' : '#55FFAA',
       textColor: isDarkTheme ? '#D0D0D0' : '#202020',
       timestamp: {
-        start: 0,
-        stop: 0,
+        start: props.timeRange.from.unix() * 1e3,
+        stop: props.timeRange.to.unix() * 1e3,
       },
       units: {
         flow: props.options.units.flow,
