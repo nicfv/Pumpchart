@@ -16,9 +16,9 @@ export function getURL(name: PaletteName, sizePx: number, cornerRadiusPx: number
     base.setAttribute('xmlns', NS);
     base.setAttribute('width', sizePx.toString());
     base.setAttribute('height', sizePx.toString());
-    base.setAttribute('viewBox', '0 0 ' + sizePx + ' ' + sizePx);
+    base.setAttribute('viewBox', `0 0 ${sizePx} ${sizePx}`);
     base.append(gradient.toSVG(safeName), icon);
-    icon.setAttribute('fill', 'url(#' + safeName + ')');
+    icon.setAttribute('fill', `url(#${safeName})`);
     icon.setAttribute('x', '0');
     icon.setAttribute('y', '0');
     icon.setAttribute('width', sizePx.toString());
