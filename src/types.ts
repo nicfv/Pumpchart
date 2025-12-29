@@ -8,4 +8,10 @@ export interface PumpchartOptions {
   readonly gradient: PumpchartTypes.Options['gradient'];
   readonly colorizeBy: PumpchartTypes.Options['colorizeBy'];
   readonly radius: PumpchartTypes.DataOptions['radius'];
+  readonly series: {
+    readonly flow: string;
+    readonly head: string;
+    readonly power: string;
+    readonly speed: string;
+  };
 }
