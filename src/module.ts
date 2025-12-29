@@ -18,6 +18,42 @@ export const plugin = new PanelPlugin<PumpchartOptions>(PumpchartPanel).setPanel
         options: Pumpchart.getFlowUnits().map(unit => { return { label: unit, value: unit } as SelectableValue }),
       },
     })
+    .addSelect({
+      path: 'units.head',
+      name: 'Head',
+      description: 'The units of head gain or pressure measurement.',
+      category: ['Measurement Units'],
+      defaultValue: defaultPumpchartOptions.units.head,
+      settings: {
+        allowCustomValue: false,
+        isClearable: false,
+        options: Pumpchart.getHeadUnits().map(unit => { return { label: unit, value: unit } as SelectableValue }),
+      },
+    })
+    .addSelect({
+      path: 'units.power',
+      name: 'Power',
+      description: 'The units for pump input power.',
+      category: ['Measurement Units'],
+      defaultValue: defaultPumpchartOptions.units.power,
+      settings: {
+        allowCustomValue: false,
+        isClearable: false,
+        options: Pumpchart.getPowerUnits().map(unit => { return { label: unit, value: unit } as SelectableValue }),
+      },
+    })
+    .addSelect({
+      path: 'units.speed',
+      name: 'Speed',
+      description: 'The units for rotational pump speed.',
+      category: ['Measurement Units'],
+      defaultValue: defaultPumpchartOptions.units.speed,
+      settings: {
+        allowCustomValue: false,
+        isClearable: false,
+        options: Pumpchart.getSpeedUnits().map(unit => { return { label: unit, value: unit } as SelectableValue }),
+      },
+    })
     .addNumberInput({
       path: 'specificGravity',
       name: 'Specific Gravity',
