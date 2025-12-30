@@ -34,4 +34,21 @@ Pumps will *always* operate somewhere along the system curve in steady-state ope
 
 ## Grafana Options
 
+1. Set the measured units; flow, head, power, and speed. Every value of those properties will be assumed to be that unit.
+1. Set the specific gravity of the process fluid. This is used to convert from pressure to head (in length.)
+1. Set the pump parameters. These are used to build the pump curve. Also, by adding numerical "speed steps", this will render concentric pump curves at each constant speed.
+1. Set the system parameters. These are used to build the system curve.
+1. Select your data sources. These must be time-dependent numeric data series.
+1. Set some display options, for example changing the gradient or point radius. Here you can also decide whether to colorize by time or efficiency. In order to colorize by efficiency, a data series for power *must* be set.
+
 ## Troubleshooting
+
+**A solution cannot be found.** A common cause of this issue is improperly setting the pump curve and system curve parameters. These values must be set in order for the pump curve and system curves to cross at a single point of operation.
+
+Another possible cause for this is that the target speed is too low to overcome the static head loss of the system. To find out if this is the case, temporarily set the system parameter for static head loss to zero.
+
+**My speed steps are not showing up.** This may be because they are set too low or too high. Be sure to set your speed steps to numerical values in between zero and the maximum pump speed.
+
+**I don't see any data.** First, make sure that the point radius isn't set too small. If that's not it, know that the graph bounds for Pumpchart are determined by the pump parameters. It's possible that some data is being rendered out of bounds, so by increasing the pump parameters, the data may become visible on the graph. If this is the case, you likely have selected the wrong units.
+
+**My data is all red.** This occurs when you are trying to colorize by efficiency but Pumpchart does not have a valid data series for pump input power.
