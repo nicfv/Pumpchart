@@ -1,4 +1,4 @@
-# Pumpchart
+# Pumpchart %VERSION%
 
 ## *Determine pump relationship between flow rate and pressure at different operating conditions*
 
@@ -31,3 +31,7 @@ Pumps will *always* operate somewhere along the system curve in steady-state ope
 
 1. **Adjusting the pump speed** which adjusts the active pump curve. If this is possible (e.g. the pump has multiple speed settings or is powered by a variable frequency drive) then this maintains the efficiency of the pump.
 1. **Throttle the system** which adjusts the system curve. This decreases pump efficiency because the same amount of power is inputted into the pump motor but it is outputting a lower flow rate.
+
+## Grafana Options
+
+## Troubleshooting
