@@ -69,17 +69,43 @@ export const plugin = new PanelPlugin<PumpchartOptions>(PumpchartPanel).setPanel
       },
     })
     .addNumberInput({
-      path: 'maxSpeed',
+      path: 'speed.max',
       name: 'Max Speed',
       description: 'The maximum rotational speed of the pump, in the units provided.',
       category: ['Pump Parameters'],
-      defaultValue: defaultPumpchartOptions.maxSpeed,
+      defaultValue: defaultPumpchartOptions.speed.max,
       settings: {
         integer: true,
         min: 1,
         max: 10000,
         step: 1,
         placeholder: 'Max Speed',
+      },
+    })
+    .addNumberInput({
+      path: 'speed.operation',
+      name: 'Target Speed',
+      description: 'The operational speed of the pump, in the units provided.',
+      category: ['Pump Parameters'],
+      defaultValue: defaultPumpchartOptions.speed.operation,
+      settings: {
+        integer: true,
+        min: 1,
+        max: 10000,
+        step: 1,
+        placeholder: 'Target Speed',
+      },
+    })
+    .addMultiSelect({
+      path: 'speed.steps',
+      name: 'Speed Steps',
+      description: 'Intermediate speed steps to render for visual clarity.',
+      category: ['Pump Parameters'],
+      defaultValue: [],
+      settings: {
+        allowCustomValue: true,
+        isClearable: true,
+        options: [],
       },
     })
     .addNumberInput({
