@@ -2,7 +2,7 @@ import { PumpchartTypes } from 'psychart';
 
 export interface PumpchartOptions {
   readonly specificGravity: PumpchartTypes.Options['specificGravity'];
-  readonly maxSpeed: PumpchartTypes.Options['speed']['max'];
+  readonly speed: PumpchartTypes.Options['speed'];
   readonly units: PumpchartTypes.Options['units'];
   readonly curve: PumpchartTypes.Options['curve'];
   readonly gradient: PumpchartTypes.Options['gradient'];
