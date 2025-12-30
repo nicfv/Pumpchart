@@ -4,17 +4,49 @@
   "name": "Pumpchart",
   "id": "ventura-pumpchart-panel",
   "info": {
-    "keywords": ["panel"],
-    "description": "",
+    "keywords": [
+      "panel",
+      "pump",
+      "efficiency",
+      "hydraulic",
+      "system",
+      "water",
+      "hvac",
+      "engineering",
+      "fluid",
+      "flow",
+      "pressure"
+    ],
+    "description": "See the relationship between pump flow rate and pressure at different operating conditions",
     "author": {
-      "name": "Ventura"
+      "name": "Nicolas Ventura",
+      "email": "ventura@lbl.gov",
+      "url": "https://www.nersc.gov/profile/nicolas-ventura"
     },
     "logos": {
       "small": "img/logo.svg",
       "large": "img/logo.svg"
     },
-    "links": [],
-    "screenshots": [],
+    "links": [
+      {
+        "name": "GitHub",
+        "url": "https://github.com/nicfv/Pumpchart"
+      }
+    ],
+    "screenshots": [
+      {
+        "name": "Base pump chart with data series",
+        "path": "img/base.png"
+      },
+      {
+        "name": "Data colorized by efficiency, with speed steps",
+        "path": "img/steps.png"
+      },
+      {
+        "name": "The Grafana panel editor for Pumpchart",
+        "path": "img/editor.png"
+      }
+    ],
     "version": "%VERSION%",
     "updated": "%TODAY%"
   },
