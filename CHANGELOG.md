@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.0.0
+## 0.0.1
 
 - Initial release, adds a pump chart with basic functionality
 - Some key features:
