@@ -20,12 +20,15 @@
   "graphTooltip": 0,
   "id": 1,
   "links": [],
-  "liveNow": false,
   "panels": [
     {
       "datasource": {
         "type": "grafana-testdata-datasource",
         "uid": "trlxrdZVk"
+      },
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
       },
       "gridPos": {
         "h": 8,
@@ -35,58 +38,93 @@
       },
       "id": 1,
       "options": {
+        "colorizeBy": "time",
+        "curve": {
+          "pump": {
+            "maxFlow": 800,
+            "maxHead": 100
+          },
+          "system": {
+            "friction": 0.0002,
+            "static": 10
+          }
+        },
+        "gradient": "Viridis",
+        "maxSpeed": 60,
+        "radius": 3,
+        "series": {
+          "flow": "flow",
+          "head": "head",
+          "power": "power",
+          "speed": ""
+        },
         "seriesCountSize": "sm",
         "showSeriesCount": false,
-        "text": "Default value of text input option"
+        "specificGravity": 1,
+        "text": "Default value of text input option",
+        "units": {
+          "flow": "gpm",
+          "head": "ft",
+          "power": "hp",
+          "speed": "Hz"
+        }
       },
+      "pluginVersion": "1.0.0",
       "targets": [
         {
+          "alias": "flow",
           "datasource": {
             "type": "grafana-testdata-datasource",
             "uid": "db84e60d-b92a-4089-82cb-34842fb1754b"
           },
+          "drop": 0,
+          "max": 600,
+          "min": 100,
           "refId": "A",
-          "scenarioId": "raw_frame",
-          "rawFrameContent": "[\n  {\n    \"columns\": [\n      {\n        \"text\": \"Time\",\n        \"type\": \"time\"\n      },\n      {\n        \"text\": \"Label\",\n        \"type\": \"string\"\n      },\n      {\n        \"text\": \"Value\",\n        \"type\": \"number\"\n      }\n    ],\n    \"rows\": [\n      [1609459200000, \"A\", 10],\n      [1609462800000, \"B\", 20],\n      [1609466400000, \"C\", 15],\n      [1609470000000, \"D\", 25],\n      [1609473600000, \"E\", 30]\n    ]\n  },\n{\n    \"columns\": [\n      {\n        \"text\": \"Time\",\n        \"type\": \"time\"\n      },\n      {\n        \"text\": \"Label\",\n        \"type\": \"string\"\n      },\n      {\n        \"text\": \"Value\",\n        \"type\": \"number\"\n      }\n    ],\n    \"rows\": [\n      [1609459200000, \"A\", 40],\n      [1609462800000, \"B\", 50],\n      [1609466400000, \"C\", 45],\n      [1609470000000, \"D\", 55],\n      [1609473600000, \"E\", 60]\n    ]\n  }\n]"
-        }
-      ],
-      "title": "Sample Panel Title",
-      "type": "ventura-pumpchart-panel"
-    },
-    {
-      "datasource": {
-        "type": "grafana-testdata-datasource",
-        "uid": "trlxrdZVk"
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 12,
-        "y": 0
-      },
-      "id": 2,
-      "options": {
-        "seriesCountSize": "sm",
-        "showSeriesCount": false,
-        "text": "Default value of text input option"
-      },
-      "targets": [
+          "scenarioId": "random_walk",
+          "seriesCount": 1,
+          "spread": 10,
+          "startValue": 400
+        },
         {
-          "alias": "",
+          "alias": "head",
           "datasource": {
             "type": "grafana-testdata-datasource",
             "uid": "db84e60d-b92a-4089-82cb-34842fb1754b"
           },
-          "refId": "A",
-          "scenarioId": "no_data_points"
+          "drop": 0,
+          "hide": false,
+          "max": 90,
+          "min": 10,
+          "noise": 0,
+          "refId": "B",
+          "scenarioId": "random_walk",
+          "seriesCount": 1,
+          "spread": 2,
+          "startValue": 50
+        },
+        {
+          "alias": "power",
+          "datasource": {
+            "type": "grafana-testdata-datasource",
+            "uid": "trlxrdZVk"
+          },
+          "hide": false,
+          "max": 15,
+          "min": 5,
+          "refId": "C",
+          "scenarioId": "random_walk",
+          "seriesCount": 1,
+          "startValue": 10
         }
       ],
-      "title": "Sample Panel Title",
+      "title": "Random Walk",
       "type": "ventura-pumpchart-panel"
     }
   ],
+  "preload": false,
   "refresh": "",
-  "schemaVersion": 39,
+  "schemaVersion": 42,
   "tags": [],
   "templating": {
     "list": []
@@ -99,6 +137,5 @@
   "timezone": "",
   "title": "Provisioned Pumpchart dashboard",
   "uid": "a538aeff-5a8a-42a5-901c-938d896fdd6f",
-  "version": 1,
-  "weekStart": ""
+  "version": 1
 }
