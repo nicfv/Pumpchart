@@ -31,11 +31,7 @@ export const PumpchartPanel: React.FC<PanelProps<PumpchartOptions>> = (props) =>
       pumpCurveColor: isDarkTheme ? '#AA6622' : '#FFAA55',
       size: { x: props.width, y: props.height },
       specificGravity: props.options.specificGravity,
-      speed: {
-        max: props.options.maxSpeed,
-        operation: 50,
-        steps: [50],
-      },
+      speed: props.options.speed,
       systemCurveColor: isDarkTheme ? '#22AA66' : '#55FFAA',
       textColor: isDarkTheme ? '#D0D0D0' : '#202020',
       timestamp: {
