@@ -11,7 +11,7 @@
 
 Pump charts illustrate the relationship between fluid flow rate and head pressure for centrifugal pumps. Pump charts are often used in pump sizing selections and help engineers understand the pump's performance and effiency under various conditions.
 
-Similar to the psychrometric chart described above, a pump chart is a graphical representation of various *states* of a hydraulic system. A *state* consists of a **flow rate** (e.g. gpm or m^3/h) and a **head pressure** (e.g. psi or bar.) The head pressure can also be represented in terms of the height of a fluid column, so it may be represented in units such as feet or meters, but it represents the same property regardless if it is a measurement of pressure or length. Other properties can be present such as pump speed, input power, and efficiency, but only **flow rate** and **head pressure** are needed to fix the state.
+Similar to a [psychrometric chart](https://grafana.com/grafana/plugins/ventura-psychrometric-panel/), a pump chart is a graphical representation of various *states* of a hydraulic system. A *state* consists of a **flow rate** (e.g. gpm or m^3/h) and a **head pressure** (e.g. psi or bar.) The head pressure can also be represented in terms of the height of a fluid column, so it may be represented in units such as feet or meters, but it represents the same property regardless if it is a measurement of pressure or length. Other properties can be present such as pump speed, input power, and efficiency, but only **flow rate** and **head pressure** are needed to fix the state.
 
 It's these two properties (flow and head) that are represented on the axes of the pump chart. Flow rate is represented on the x-axis and head pressure is represented on the y-axis.
 
