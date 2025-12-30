@@ -10,7 +10,11 @@ export const defaultPumpchartOptions: PumpchartOptions = {
         system: { friction: 0.001, static: 10 },
     },
     gradient: 'Viridis',
-    maxSpeed: 60,
+    speed: {
+        max: 60,
+        operation: 45,
+        steps: [15, 30, 45],
+    },
     radius: 3,
     series: { flow: '', head: '', power: '', speed: '' },
     specificGravity: 1,
