@@ -52,3 +52,9 @@ Another possible cause for this is that the target speed is too low to overcome 
 **I don't see any data.** First, make sure that the point radius isn't set too small. If that's not it, know that the graph bounds for Pumpchart are determined by the pump parameters. It's possible that some data is being rendered out of bounds, so by increasing the pump parameters, the data may become visible on the graph. If this is the case, you likely have selected the wrong units.
 
 **My data is all red.** This occurs when you are trying to colorize by efficiency but Pumpchart does not have a valid data series for pump input power.
+
+## Metadata
+
+| Plugin ID | Version | Date |
+| --------- | ------- | ---- |
+| `%PLUGIN_ID%` | `%VERSION%` | `%TODAY%` |
