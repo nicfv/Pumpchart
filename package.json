@@ -15,7 +15,7 @@
     "clean": "rm -rf dist node_modules package-lock.json .eslintcache"
   },
   "author": "Nicolas Ventura",
-  "license": "Apache-2.0",
+  "license": "BSD-3-Clause-LBNL",
   "devDependencies": {
     "@grafana/eslint-config": "^9.0.0",
     "@grafana/plugin-e2e": "^3.1.0",
