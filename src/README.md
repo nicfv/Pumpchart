@@ -60,10 +60,10 @@ Another possible cause for this is that the target speed is too low to overcome 
 
 ## License
 
-Pumpchart was created by Nicolas Ventura and owned by Berkeley Lab, a DOE funded national laboratory, and is distributed under the [BSD-3-Clause-LBNL](https://github.com/nicfv/Pumpchart/blob/main/LICENSE) license.
+Pumpchart was created by Nicolas Ventura and owned by Berkeley Lab, a DOE funded national laboratory, and is distributed under the [BSD-3-Clause-LBNL](https://raw.githubusercontent.com/nicfv/Pumpchart/refs/heads/main/LICENSE) license.
 
 | Plugin ID | Version | Date |
 | --------- | ------- | ---- |
 | `%PLUGIN_ID%` | `%VERSION%` | `%TODAY%` |
 
-[Copyright Notice](https://github.com/nicfv/Pumpchart/blob/main/LEGAL)
+[Copyright Notice](https://raw.githubusercontent.com/nicfv/Pumpchart/refs/heads/main/LEGAL)
