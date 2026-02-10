@@ -3,6 +3,7 @@
 ## 0.0.2
 
 - Add Grafana badges to main README page
+- Change links to copyright notice and license to Github raw links
 - Update create-plugin to v6.8.4
 
 ## 0.0.1
