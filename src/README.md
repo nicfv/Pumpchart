@@ -7,6 +7,11 @@
 [![Latest Grafana API compatibility check](https://github.com/nicfv/Pumpchart/actions/workflows/is-compatible.yml/badge.svg)](https://github.com/nicfv/Pumpchart/actions/workflows/is-compatible.yml)
 [![Release](https://github.com/nicfv/Pumpchart/actions/workflows/release.yml/badge.svg)](https://github.com/nicfv/Pumpchart/actions/workflows/release.yml)
 
+[![Dynamic JSON Badge](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fgrafana.com%2Fapi%2Fplugins%2Fventura-pumpchart-panel&query=%24.downloads&logo=grafana&label=Downloads&color=orange)](https://grafana.com/grafana/plugins/ventura-pumpchart-panel/)
+[![Dynamic JSON Badge](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fgrafana.com%2Fapi%2Fplugins%2Fventura-pumpchart-panel&query=%24.grafanaDependency&logo=grafana&label=Grafana&color=orange)](https://grafana.com/grafana/plugins/ventura-pumpchart-panel/)
+[![Dynamic JSON Badge](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fgrafana.com%2Fapi%2Fplugins%2Fventura-pumpchart-panel&query=%24.popularity&logo=grafana&label=Popularity&color=orange)](https://grafana.com/grafana/plugins/ventura-pumpchart-panel/)
+[![Dynamic JSON Badge](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fgrafana.com%2Fapi%2Fplugins%2Fventura-pumpchart-panel&query=%24.version&logo=grafana&label=Version&color=orange)](https://grafana.com/grafana/plugins/ventura-pumpchart-panel/)
+
 ## What is a pump chart?
 
 Pump charts illustrate the relationship between fluid flow rate and head pressure for centrifugal pumps. Pump charts are often used in pump sizing selections and help engineers understand the pump's performance and effiency under various conditions.
@@ -55,10 +60,10 @@ Another possible cause for this is that the target speed is too low to overcome 
 
 ## License
 
-Pumpchart was created by Nicolas Ventura and owned by Berkeley Lab, a DOE funded national laboratory, and is distributed under the [BSD-3-Clause-LBNL](https://github.com/nicfv/Pumpchart/blob/main/LICENSE) license.
+Pumpchart was created by Nicolas Ventura and owned by Berkeley Lab, a DOE funded national laboratory, and is distributed under the [BSD-3-Clause-LBNL](https://raw.githubusercontent.com/nicfv/Pumpchart/refs/heads/main/LICENSE) license.
 
 | Plugin ID | Version | Date |
 | --------- | ------- | ---- |
 | `%PLUGIN_ID%` | `%VERSION%` | `%TODAY%` |
 
-[Copyright Notice](https://github.com/nicfv/Pumpchart/blob/main/LEGAL)
+[Copyright Notice](https://raw.githubusercontent.com/nicfv/Pumpchart/refs/heads/main/LEGAL)
