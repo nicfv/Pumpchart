@@ -5,14 +5,13 @@ import { useTheme2 } from '@grafana/ui';
 import { Container } from './container';
 import { PanelDataErrorView } from '@grafana/runtime';
 import { Pumpchart } from 'psychart';
-import { format, getTimeField } from 'formatter';
+import { format } from 'formatter';
 
 export const PumpchartPanel: React.FC<PanelProps<PumpchartOptions>> = (props) => {
   const isDarkTheme: boolean = useTheme2().isDark;
   let innerElement: HTMLElement;
   try {
-    const formatted = format(props.data.series);
-    const timeField = getTimeField(formatted);
+    const [timeField, formatted] = format(props.data.series);
     const pumpchart: Pumpchart = new Pumpchart({
       axisColor: isDarkTheme ? '#303030' : '#E0E0E0',
       colorizeBy: props.options.colorizeBy,
@@ -46,8 +45,8 @@ export const PumpchartPanel: React.FC<PanelProps<PumpchartOptions>> = (props) =>
         speed: props.options.units.speed,
       },
     });
-    for (const pt of formatted.toArray()) {
-      const time: number | undefined = timeField ? pt[timeField] : undefined;
+    for (const pt of formatted) {
+      const time: number | undefined = pt[timeField];
       const flow: number | undefined = pt[props.options.series.flow];
       const head: number | undefined = pt[props.options.series.head];
       const power: number | undefined = pt[props.options.series.power];
