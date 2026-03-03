@@ -1,13 +1,13 @@
 # Changelog
 
-## 0.0.2
+## 0.0.2 [2026-02-25]
 
 - Add Grafana badges to main README page
 - Change links to copyright notice and license to Github raw links
 - Simplify internal data formatter using builtin Grafana API methods
 - Update create-plugin to v6.8.4
 
-## 0.0.1
+## 0.0.1 [2026-01-09]
 
 - Initial release, adds a pump chart with basic functionality
 - Some key features:
