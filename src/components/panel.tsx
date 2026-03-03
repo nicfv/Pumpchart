@@ -11,7 +11,7 @@ export const PumpchartPanel: React.FC<PanelProps<PumpchartOptions>> = (props) =>
   const isDarkTheme: boolean = useTheme2().isDark;
   let innerElement: HTMLElement;
   try {
-    const [timeField, formatted] = format(props.data.series);
+    const formatted = format(props.data.series);
     const pumpchart: Pumpchart = new Pumpchart({
       axisColor: isDarkTheme ? '#303030' : '#E0E0E0',
       colorizeBy: props.options.colorizeBy,
@@ -45,16 +45,15 @@ export const PumpchartPanel: React.FC<PanelProps<PumpchartOptions>> = (props) =>
         speed: props.options.units.speed,
       },
     });
-    for (const pt of formatted) {
-      const time: number | undefined = pt[timeField];
-      const flow: number | undefined = pt[props.options.series.flow];
-      const head: number | undefined = pt[props.options.series.head];
-      const power: number | undefined = pt[props.options.series.power];
-      const speed: number | undefined = pt[props.options.series.speed];
+    for (const time in formatted) {
+      const flow: number = formatted[time][props.options.series.flow];
+      const head: number = formatted[time][props.options.series.head];
+      const power: number = formatted[time][props.options.series.power];
+      const speed: number = formatted[time][props.options.series.speed];
       if (typeof flow !== 'number' || typeof head !== 'number') {
         continue;
       }
-      pumpchart.plot({ flow: flow, head: head, power: power, speed: speed }, { radius: props.options.radius, timestamp: time });
+      pumpchart.plot({ flow: flow, head: head, power: power, speed: speed }, { radius: props.options.radius, timestamp: +time });
     }
     innerElement = pumpchart.getElement();
   } catch (ex: any) {
