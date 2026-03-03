@@ -171,7 +171,7 @@ export const plugin = new PanelPlugin<PumpchartOptions>(PumpchartPanel).setPanel
       category: ['Data Sources'],
       defaultValue: defaultPumpchartOptions.series.flow,
       settings: {
-        baseNameMode: FieldNamePickerBaseNameMode.IncludeAll,
+        baseNameMode: FieldNamePickerBaseNameMode.ExcludeBaseNames,
         filter(field) {
           return field.type === FieldType.number;
         },
@@ -185,7 +185,7 @@ export const plugin = new PanelPlugin<PumpchartOptions>(PumpchartPanel).setPanel
       category: ['Data Sources'],
       defaultValue: defaultPumpchartOptions.series.head,
       settings: {
-        baseNameMode: FieldNamePickerBaseNameMode.IncludeAll,
+        baseNameMode: FieldNamePickerBaseNameMode.ExcludeBaseNames,
         filter(field) {
           return field.type === FieldType.number;
         },
@@ -199,7 +199,7 @@ export const plugin = new PanelPlugin<PumpchartOptions>(PumpchartPanel).setPanel
       category: ['Data Sources'],
       defaultValue: defaultPumpchartOptions.series.power,
       settings: {
-        baseNameMode: FieldNamePickerBaseNameMode.IncludeAll,
+        baseNameMode: FieldNamePickerBaseNameMode.ExcludeBaseNames,
         filter(field) {
           return field.type === FieldType.number;
         },
@@ -213,7 +213,7 @@ export const plugin = new PanelPlugin<PumpchartOptions>(PumpchartPanel).setPanel
       category: ['Data Sources'],
       defaultValue: defaultPumpchartOptions.series.speed,
       settings: {
-        baseNameMode: FieldNamePickerBaseNameMode.IncludeAll,
+        baseNameMode: FieldNamePickerBaseNameMode.ExcludeBaseNames,
         filter(field) {
           return field.type === FieldType.number;
         },
