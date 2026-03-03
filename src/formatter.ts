@@ -1,13 +1,28 @@
-import { DataFrame, DataFrameView, FieldType, outerJoinDataFrames } from '@grafana/data';
+import { DataFrame, FieldType, getFieldDisplayName } from '@grafana/data';
 
 /**
- * Join all series by time into an array of series and return the time field series name.
+ * Represents formatted data indexed by timestamps.
  */
-export function format(series: DataFrame[]): [string, Array<Record<string, number>>] {
-    const formatted: DataFrameView = new DataFrameView(outerJoinDataFrames({ frames: series })!);
-    const timeField: string | undefined = formatted.dataFrame.fields.find(field => field.type === FieldType.time)?.name;
-    if (!timeField) {
-        throw new Error('Data is missing a time field.');
+type Formatted = Record<number, Record<string, number>>;
+
+/**
+ * Join all series into a time-indexed array of data.
+ */
+export function format(series: DataFrame[]): Formatted {
+    const formatted: Formatted = {};
+    // Run through each data frame in the series
+    for (const frame of series) {
+        // Run through each timestep in the data frame
+        frame.fields.find(field => field.type === FieldType.time)?.values.forEach((step: number, index: number) => {
+            // Set the timestep in the formatted data if unset
+            formatted[step] = formatted[step] ?? {};
+            // Run through each numeric value for each timestep
+            for (const field of frame.fields.filter(field => field.type === FieldType.number)) {
+                // Determine the display name and add the value to the formatted output
+                const name: string = getFieldDisplayName(field, frame, series);
+                formatted[step][name] = field.values[index];
+            }
+        });
     }
-    return [timeField, formatted.toArray()];
+    return formatted;
 }
