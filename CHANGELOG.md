@@ -3,6 +3,7 @@
 ## 1.0.1 [2026-05-29]
 
 - Update to create-plugin version 7.7.0
+- Addressed a critical security vulnerability with `serialize-javascript`
 
 ## 1.0.0 [2026-03-03]
 
