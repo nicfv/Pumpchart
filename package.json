@@ -1,6 +1,6 @@
 {
   "name": "pumpchart",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "scripts": {
     "build": "webpack -c ./.config/webpack/webpack.config.ts --env production",
     "dev": "webpack -w -c ./.config/webpack/webpack.config.ts --env development",
@@ -11,14 +11,15 @@
     "lint:fix": "npm run lint -- --fix && prettier --write --list-different .",
     "e2e": "playwright test",
     "server": "docker compose up --build",
-    "sign": "npx --yes @grafana/sign-plugin@latest",
+    "sign": "sign-plugin",
     "clean": "rm -rf dist node_modules package-lock.json .eslintcache"
   },
   "author": "Nicolas Ventura",
   "license": "BSD-3-Clause-LBNL",
   "devDependencies": {
     "@grafana/eslint-config": "^9.0.0",
-    "@grafana/plugin-e2e": "^3.4.1",
+    "@grafana/plugin-e2e": "^3.6.1",
+    "@grafana/sign-plugin": "^3.2.2",
     "@grafana/tsconfig": "^2.0.1",
     "@playwright/test": "^1.57.0",
     "@stylistic/eslint-plugin-ts": "^4.4.0",
@@ -33,7 +34,7 @@
     "@types/react-dom": "^18.3.0",
     "@typescript-eslint/eslint-plugin": "^8.38.0",
     "@typescript-eslint/parser": "^8.38.0",
-    "copy-webpack-plugin": "^14.0.0",
+    "copy-webpack-plugin": "^13.0.0",
     "css-loader": "^7.1.0",
     "eslint": "^9.32.0",
     "eslint-config-prettier": "^10.1.0",
@@ -67,16 +68,16 @@
     "node": ">=22"
   },
   "dependencies": {
-    "psychart": "0.11.1",
-    "viridis": "1.4.2",
+    "psychart": "1.0.0",
+    "viridis": "1.5.0",
     "@emotion/css": "11.10.6",
-    "@grafana/data": "^12.4.0",
-    "@grafana/i18n": "^12.4.0",
-    "@grafana/runtime": "^12.4.0",
-    "@grafana/ui": "^12.4.0",
-    "@grafana/schema": "^12.4.0",
+    "@grafana/data": "12.4.2",
+    "@grafana/i18n": "12.4.2",
+    "@grafana/runtime": "12.4.2",
+    "@grafana/ui": "12.4.2",
+    "@grafana/schema": "12.4.2",
     "react": "^18.3.0",
     "react-dom": "^18.3.0"
   },
-  "packageManager": "npm@11.9.0"
+  "packageManager": "npm@11.16.0"
 }

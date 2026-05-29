@@ -1,10 +1,15 @@
 # Changelog
 
+## 1.0.1 [2026-05-29]
+
+- Update to create-plugin version 7.7.0
+
 ## 1.0.0 [2026-03-03]
 
 - Exclude base names from field name pickers
 - Fix issues with internal dataframe formatter
     - Join fields by `getFieldDisplayName()` API function
+- Addressed a critical security vulnerability
 - Update Grafana framework to v12.3.0
 - Update to create-plugin version 7.0.2
 - Add dates to changelog entries
