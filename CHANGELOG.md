@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.0.1 [2026-08-12]
+## 1.0.2 [2026-08-12]
 
 - Update to create-plugin version 7.9.2
 
