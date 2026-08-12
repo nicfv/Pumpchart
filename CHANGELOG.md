@@ -3,6 +3,7 @@
 ## 1.0.2 [2026-08-12]
 
 - Update to create-plugin version 7.9.2
+- Fix minor inefficiency in `panel.tsx`
 
 ## 1.0.1 [2026-05-29]
 
