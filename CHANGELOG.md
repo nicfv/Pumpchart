@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.2 [2026-08-12]
+
+- Update to create-plugin version 7.9.2
+- Update Grafana framework to v13.1.0
+- Fix minor inefficiency in `panel.tsx`
+
 ## 1.0.1 [2026-05-29]
 
 - Update to create-plugin version 7.7.0

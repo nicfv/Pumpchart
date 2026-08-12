@@ -9,7 +9,7 @@ import { format } from 'formatter';
 
 export const PumpchartPanel: React.FC<PanelProps<PumpchartOptions>> = (props) => {
   const isDarkTheme: boolean = useTheme2().isDark;
-  let innerElement: HTMLElement;
+  let innerElement: HTMLElement | null = null;
   try {
     const formatted = format(props.data.series);
     const pumpchart: Pumpchart = new Pumpchart({
