@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.1 [2026-08-12]
+
+- Update to create-plugin version 7.9.2
+
 ## 1.0.1 [2026-05-29]
 
 - Update to create-plugin version 7.7.0
